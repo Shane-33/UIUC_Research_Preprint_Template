@@ -1,0 +1,47 @@
+\ifdefined\XeTeXversion\else\ifdefined\directlua\else\pdfoutput=1\fi\fi
+\documentclass[10pt,twocolumn]{article}
+\usepackage{uiucminimal}
+
+% ------- EDIT ONLY THESE FIELDS FOR A NEW PAPER -------
+\newcommand{\papertitle}{A Research Preprint Template for Machine Learning and Computer Vision}
+\newcommand{\authorline}{First Author\textsuperscript{1}\quad Second Author\textsuperscript{1,2}}
+\newcommand{\affiliationline}{\textsuperscript{1}University of Illinois Urbana-Champaign\quad \textsuperscript{2}Second Institution}
+\newcommand{\contactline}{\href{mailto:author@illinois.edu}{author@illinois.edu}\quad $\cdot$\quad
+\href{https://github.com/your-repo}{Code}\quad $\cdot$\quad
+\href{https://example.org/}{Project website}}
+\newcommand{\paperdate}{November 2026}
+\newcommand{\paperabstract}{%
+This is a clean two-column LaTeX template designed for an arXiv research preprint.
+Replace this text with a self-contained account of your problem, proposed method,
+evaluation setting, main experimental findings, and limitations. The design uses
+conventional academic typesetting, a restrained Illinois color palette, and the
+formal university wordmark. All example results in the paper are placeholders,
+not scientific claims.}
+% ----------------------------------------------------
+\hypersetup{pdftitle={A Research Preprint Template for Machine Learning and Computer Vision},
+ pdfauthor={First Author and Second Author},pdfsubject={Research preprint}}
+
+\begin{document}
+\twocolumn[{%
+\begin{@twocolumnfalse}
+  \uiucclassictitle
+\end{@twocolumnfalse}
+}]
+
+\input{sections/01_introduction}
+\input{sections/02_method}
+\input{sections/03_experiments}
+\input{sections/04_conclusion}
+
+\section*{Limitations}
+Describe assumptions, where the system fails, and threats to the validity of the evaluation.
+
+\section*{Acknowledgments}
+Acknowledge funding, compute, and assistance as appropriate.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\appendix
+\input{sections/appendix}
+\end{document}

@@ -1,0 +1,111 @@
+% !TEX program = pdflatex
+\ifdefined\XeTeXversion\else\ifdefined\directlua\else\pdfoutput=1\fi\fi
+\documentclass[11pt]{article}
+\usepackage{illinoispreprint}
+
+% --------------------------------------------------------------------------
+% EDIT THESE FIELDS FOR YOUR PAPER.
+% Author, affiliation, abstract, and links appear inside the shaded title card.
+% --------------------------------------------------------------------------
+\papertitle{Neural Representation Learning: A Research Preprint Template}
+\paperauthors{First Author\textsuperscript{1,*}, Second Author\textsuperscript{1}, Third Author\textsuperscript{2}}
+\paperaffiliation[1]{University of Illinois Urbana-Champaign}
+\paperaffiliation[2]{Collaborating Institution}
+\papernote{\textsuperscript{*}Corresponding author}
+\paperabstract{Replace this paragraph with a 150--250 word abstract. State the research question and why it matters, explain the proposed approach and the evaluation setup, and summarize the main findings with numbers that can be verified. This text is illustrative: it does not describe completed experiments or claim any scientific result. The title, authors, abstract, and project links are grouped into the same softly tinted card as the reference design.}
+\paperdate{November 17, 2026}
+\papercontact{\href{mailto:author@example.edu}{author@example.edu}}
+\paperlink{Code}{\href{https://example.org/your-project}{example.org/your-project}}
+\paperlink{Project}{\href{https://example.org}{Project website}}
+
+\begin{document}
+
+% Full-width title and teaser. The body underneath is genuinely 2 columns.
+% Braced optional argument protects the square brackets in included macros.
+\twocolumn[{%
+  \begin{minipage}{\textwidth}
+    \makeillinoistitle
+    \illustrativeteaser
+    \vspace{8pt}
+  \end{minipage}%
+}]
+
+\section{Introduction}
+A strong research preprint starts with a concrete problem, explains the gap in existing methods, and establishes an empirical question. Modern visual representations provide one example of reusable learned features \citep{he2016deep,vaswani2017attention}. Replace this illustrative prose with the introduction to your own work.
+
+\begin{itemize}
+  \item \textbf{Question.} Identify the exact scientific claim being tested.
+  \item \textbf{Method.} Explain the new idea and the strongest appropriate baselines.
+  \item \textbf{Evidence.} Describe which results directly support the main conclusion.
+\end{itemize}
+
+\begin{takeaway}
+Replace this with the one or two empirically supported findings a reader should remember. Do not include unverified results.
+\end{takeaway}
+
+\section{Related Work}
+Organize the literature by scientific question and methodological connection, rather than writing a paper-by-paper list. Use normal BibTeX citations such as \citet{he2016deep} and \citet{vaswani2017attention}.
+
+\section{Method}
+\label{sec:method}
+\subsection{Problem formulation}
+Let $\mathcal{D}=\{(x_i,y_i)\}_{i=1}^{N}$ be an example dataset, with inputs $x_i$ and targets $y_i$. A generic prediction model can be written as
+\begin{equation}
+  \hat y_i = f_{\theta}(x_i),\qquad
+  \mathcal{L}(\theta)=\frac{1}{N}\sum_{i=1}^{N}\ell(\hat y_i,y_i).
+  \label{eq:objective}
+\end{equation}
+This is a typesetting example only, not a proposal for a particular dataset or loss. Explain all symbols before using them.
+
+\subsection{Implementation details}
+Specify your training split, validation procedure, test set, preprocessing, hyperparameters, and statistical uncertainty. Include enough detail to reproduce your protocol.
+
+\begin{promptbox}[Example of a formatted prompt]
+Task: Summarize the key experimental observation.\\
+Input: \{image or stimulus\}\\
+Output: \{structured prediction\}
+\end{promptbox}
+
+\section{Experiments}
+\label{sec:experiments}
+\subsection{Evaluation protocol}
+State the sample unit, number of replicates, baselines, primary metric, and how the uncertainty interval is calculated. When comparing methods, evaluate on identical splits wherever possible.
+
+\subsection{Results}
+\Cref{tab:sample} demonstrates a compact, professional table that remains legible in both the single- and double-column layouts.
+\begin{table}[t]
+  \centering
+  \caption{Example comparison. All values below are illustrative, not findings.}
+  \label{tab:sample}
+  \small
+  \begin{tabular}{lccc}
+    \toprule
+    Method & Setting A & Setting B & Mean \\
+    \midrule
+    Baseline A & 0.61 & 0.55 & 0.58 \\
+    Baseline B & 0.67 & 0.59 & 0.63 \\
+    \oursrow Proposed & \best{0.72} & \best{0.65} & \best{0.69} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{finding}[Finding: replace with evidence]
+Use this space for an interpretable scientific finding, followed by the effect size, uncertainty, and the exact table or figure that supports it.
+\end{finding}
+
+\section{Discussion and Limitations}
+Separate the quantities measured, the claims supported by those quantities, and the limitations of causal or mechanistic interpretation.
+
+\section{Conclusion}
+Summarize the contribution and major evidence in a few sentences, without overclaiming.
+
+\section*{Acknowledgments}
+Acknowledge collaborators, funding, and other contributions as appropriate.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\appendix
+\section{Additional Implementation Details}
+Put hyperparameter tables, ablations, data splits, derivations, and reproducibility information here. The appendix uses the same typography as the main paper.
+\end{document}

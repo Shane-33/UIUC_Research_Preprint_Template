@@ -1,0 +1,32 @@
+\section{Method}\label{sec:method}
+Define the dataset $\mathcal{D}=\{(x_i,y_i)\}_{i=1}^{N}$ and predictive
+model $f_{\theta}$. A generic example training objective is
+\begin{equation}\label{eq:objective}
+\mathcal{L}(\theta)=\frac{1}{N}\sum_{i=1}^{N}
+\ell\bigl(f_{\theta}(x_i),y_i\bigr).
+\end{equation}
+Explain each variable, modeling choice, and evaluation assumption. Use
+\cref{eq:objective} to connect the mathematical formulation to your method.
+
+\subsection{Method overview}
+Provide a diagram only when it clarifies the procedure. \Cref{fig:overview}
+is an illustrative example.
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[>=Stealth,node distance=0.32cm,
+ every node/.style={draw=uiucline,fill=uiucpale,rounded corners=2pt,
+ minimum width=0.86\columnwidth,minimum height=0.58cm,
+ align=center,font=\small}]
+\node (a) {Observed samples};
+\node[below=0.31cm of a] (b) {Prediction model};
+\node[below=0.31cm of b] (c) {Held-out evaluation};
+\draw[->,line width=0.75pt,draw=illinoisnavy] (a)--(b);
+\draw[->,line width=0.75pt,draw=illinoisnavy] (b)--(c);
+\end{tikzpicture}
+\caption{Illustrative pipeline for demonstrating figure styling.}
+\label{fig:overview}
+\end{figure}
+
+\subsection{Implementation details}
+Report model configurations, train/test splits, hyperparameters, hardware,
+random seeds, and code availability. Define baselines consistently.

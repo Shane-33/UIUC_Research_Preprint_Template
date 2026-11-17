@@ -1,0 +1,105 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{uiucminimal}[2026/11/17 Minimal Illinois research preprint]
+
+\RequirePackage[letterpaper,top=0.77in,bottom=0.78in,left=0.78in,right=0.78in,footskip=25pt]{geometry}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{amsmath,amssymb,amsthm,mathtools}
+\RequirePackage{newtxtext,newtxmath}
+\RequirePackage[scaled=0.92]{helvet}
+\RequirePackage{microtype}
+\RequirePackage[dvipsnames,table]{xcolor}
+\definecolor{illinoisnavy}{HTML}{13294B}
+\definecolor{illinoisorange}{HTML}{FF5F05}
+\definecolor{uiucink}{HTML}{1E293B}
+\definecolor{uiucmuted}{HTML}{5E6A78}
+\definecolor{uiucline}{HTML}{DCE2E9}
+\definecolor{uiucpale}{HTML}{F4F7FA}
+\RequirePackage{graphicx,booktabs,multirow,array,tabularx}
+\RequirePackage{caption,subcaption}
+\RequirePackage{enumitem}
+\RequirePackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+\RequirePackage{titlesec,fancyhdr}
+\RequirePackage[numbers,sort&compress]{natbib}
+\RequirePackage{url}
+\RequirePackage[colorlinks=true,linkcolor=illinoisnavy,citecolor=illinoisnavy,urlcolor=illinoisnavy,breaklinks=true]{hyperref}
+\RequirePackage[capitalise,noabbrev]{cleveref}
+
+\setlength{\columnsep}{0.255in}
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0pt}
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{9pt plus 2pt minus 2pt}
+\setlength{\intextsep}{9pt plus 2pt minus 2pt}
+\setlist[itemize]{leftmargin=1.45em,itemsep=1pt,topsep=3pt}
+\captionsetup{font=small,labelfont=bf,labelsep=period,skip=5pt}
+\captionsetup[table]{position=top}
+\titleformat{\section}{\sffamily\bfseries\fontsize{11.4}{13.5}\selectfont\color{uiucink}}{\thesection}{0.65em}{}
+\titleformat{\subsection}{\sffamily\bfseries\fontsize{10}{12}\selectfont\color{uiucink}}{\thesubsection}{0.65em}{}
+\titleformat{\subsubsection}{\sffamily\bfseries\normalsize\color{uiucink}}{\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{13pt plus 2pt minus 2pt}{5pt}
+\titlespacing*{\subsection}{0pt}{9pt plus 1pt minus 1pt}{3pt}
+\titlespacing*{\subsubsection}{0pt}{7pt plus 1pt minus 1pt}{3pt}
+\theoremstyle{plain}\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}\newtheorem{definition}{Definition}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\sffamily\footnotesize\color{uiucmuted}\thepage}
+\setlength{\headheight}{12pt}
+\urlstyle{same}
+
+% Brand header - formal full-color mark supplied by the author.
+\newcommand{\uiucwordmark}{\includegraphics[width=2.33in]{assets/Illinois_formal_wordmark_tm_fullcolor_rgb.png}}
+\newcommand{\uiucbrandrow}{%
+  \noindent\begin{minipage}[c]{0.58\linewidth}\raggedright\uiucwordmark\end{minipage}%
+  \hfill\begin{minipage}[c]{0.38\linewidth}\raggedleft
+     {\sffamily\fontsize{8}{10}\selectfont\color{uiucmuted}\MakeUppercase{Research Preprint}\\[2pt]\paperdate\par}%
+  \end{minipage}\par\vspace{10pt}%
+  {\color{uiucline}\rule{\linewidth}{0.55pt}}\par}
+
+% Main (recommended): left-aligned editorial title and abstract.
+\newcommand{\uiuceditorialtitle}{%
+  \uiucbrandrow
+  \vspace{15pt}%
+  {\raggedright\sffamily\bfseries\fontsize{20}{24}\selectfont\color{uiucink}\papertitle\par}
+  \vspace{12pt}%
+  {\raggedright\sffamily\fontsize{10.5}{13}\selectfont\color{uiucink}\authorline\par}%
+  \vspace{5pt}%
+  {\raggedright\sffamily\fontsize{8.8}{11.5}\selectfont\color{uiucmuted}\affiliationline\par}%
+  \vspace{4pt}%
+  {\raggedright\sffamily\fontsize{8.7}{11.2}\selectfont\color{uiucmuted}\contactline\par}%
+  \vspace{13pt}%
+  {\color{uiucline}\rule{\linewidth}{0.5pt}}\par\vspace{9pt}%
+  \noindent\begin{minipage}{\linewidth}\small
+    {\sffamily\bfseries\fontsize{9.6}{12}\selectfont\color{uiucink}Abstract}\par\vspace{3pt}
+    {\fontsize{9.5}{12.5}\selectfont\paperabstract\par}%
+  \end{minipage}\par
+  \vspace{10pt}{\color{uiucline}\rule{\linewidth}{0.5pt}}\par\vspace{11pt}%
+}
+
+% Alternative: centered academic title, same understated branding.
+\newcommand{\uiucclassictitle}{%
+  \uiucbrandrow
+  \vspace{14pt}%
+  {\centering\sffamily\bfseries\fontsize{19.5}{23}\selectfont\color{uiucink}\papertitle\par}
+  \vspace{12pt}%
+  {\centering\sffamily\fontsize{10.4}{13}\selectfont\color{uiucink}\authorline\par}%
+  \vspace{5pt}%
+  {\centering\sffamily\fontsize{8.8}{11.5}\selectfont\color{uiucmuted}\affiliationline\par}%
+  \vspace{4pt}%
+  {\centering\sffamily\fontsize{8.7}{11.2}\selectfont\color{uiucmuted}\contactline\par}%
+  \vspace{13pt}%
+  {\color{uiucline}\rule{\linewidth}{0.5pt}}\par\vspace{8pt}%
+  \noindent\begin{minipage}{\linewidth}\small
+    {\centering\sffamily\bfseries\fontsize{9.6}{12}\selectfont\color{uiucink}Abstract\par}\vspace{4pt}
+    {\fontsize{9.5}{12.5}\selectfont\paperabstract\par}%
+  \end{minipage}\par
+  \vspace{10pt}{\color{uiucline}\rule{\linewidth}{0.5pt}}\par\vspace{11pt}%
+}
+
+\newcommand{\best}[1]{\textbf{#1}}
+\newcommand{\second}[1]{\underline{#1}}
+\newcommand{\exampledata}{\textsf{Illustrative values}}
+\endinput
